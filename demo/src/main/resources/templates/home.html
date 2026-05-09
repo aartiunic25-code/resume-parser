@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <title>AI Resume Screening</title>
+
+    <style>
+
+        body{
+            font-family:Arial;
+            background:linear-gradient(to right,#667eea,#764ba2);
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .box{
+            background:white;
+            padding:40px;
+            border-radius:15px;
+            text-align:center;
+            width:400px;
+            box-shadow:0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        h1{
+            margin-bottom:20px;
+        }
+
+        a{
+            text-decoration:none;
+        }
+
+        button{
+            width:100%;
+            padding:15px;
+            margin-top:15px;
+            border:none;
+            color:white;
+            font-size:16px;
+            border-radius:8px;
+            cursor:pointer;
+        }
+
+        .upload{
+            background:#4CAF50;
+        }
+
+        .dashboard{
+            background:#2196F3;
+        }
+
+        .login{
+            background:#ff9800;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+    <h1>AI Resume Screening System</h1>
+
+    <a href="/upload.html">
+        <button class="upload">
+            Upload Resume
+        </button>
+    </a>
+
+    <a href="/resume/dashboard">
+        <button class="dashboard">
+            Dashboard
+        </button>
+    </a>
+
+    <a href="/resume/login">
+        <button class="login">
+            Admin Login
+        </button>
+    </a>
+
+</div>
+
+</body>
+</html>
