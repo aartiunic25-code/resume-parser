@@ -148,11 +148,7 @@ private int calculateScore(String content) {
 
         return "login";
     }
-    @GetMapping("/")
-    public String homePage()
-    {
-        return "home";
-    }
+
     @GetMapping("/")
     public String home()
     {
