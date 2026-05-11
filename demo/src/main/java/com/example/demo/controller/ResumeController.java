@@ -23,7 +23,7 @@ public class ResumeController {
 
     @Autowired
     private ResumeRepository resumeRepository;
-
+@ResponseBody
     @PostMapping("/upload")
     public String uploadResume(@RequestParam("file") MultipartFile file) {
         try {
