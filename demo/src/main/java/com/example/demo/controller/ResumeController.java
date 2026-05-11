@@ -51,7 +51,7 @@ public class ResumeController {
 
             resumeRepository.save(resume);
 
-            return "Saved with score: " + score;
+            return "Upload Successful. score: " + score;
 
         } catch (Exception e) {
             return "Error: " + e.getMessage();
