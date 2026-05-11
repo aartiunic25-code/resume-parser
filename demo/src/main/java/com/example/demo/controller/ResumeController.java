@@ -153,4 +153,10 @@ private int calculateScore(String content) {
     {
         return "home";
     }
+    @GetMapping("/")
+    public String home()
+    {
+        return "index";
+    }
+
 }

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resume Parser</title>
+    <style>
+        body{
+            font-family: Arial;
+            background:#f4f4f4;
+            text-align:center;
+            padding-top:50px;
+        }
+
+        .container{
+            background:white;
+            width:400px;
+            margin:auto;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.2);
+        }
+
+        h1{
+            color:#333;
+        }
+
+        input{
+            margin:20px;
+        }
+
+        button{
+            padding:10px 20px;
+            background:#007bff;
+            color:white;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#0056b3;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Resume Parser</h1>
+
+    <form action="/resume/upload" method="post" enctype="multipart/form-data">
+
+        <input type="file" name="file" required>
+
+        <br>
+
+        <button type="submit">Upload Resume</button>
+
+    </form>
+</div>
+
+</body>
+</html>
