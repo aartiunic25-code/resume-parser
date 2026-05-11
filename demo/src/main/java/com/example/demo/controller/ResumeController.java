@@ -27,19 +27,19 @@ public class ResumeController {
     @PostMapping("/upload")
     public String uploadResume(@RequestParam("file") MultipartFile file) {
         try {
-            String uploadDir="uploads/";
+           //String uploadDir="uploads/";
             Tika tika = new Tika();
             String content = tika.parseToString(file.getInputStream());
-            File dir = new File(uploadDir);
+           // File dir = new File(uploadDir);
 
-            if (!dir.exists()) {
-                dir.mkdirs();
-            }
+           // if (!dir.exists()) {
+             //   dir.mkdirs();
+            //}
 
-            String filePath =
-                    uploadDir + file.getOriginalFilename();
+            //String filePath =
+                   // uploadDir + file.getOriginalFilename();
 
-            file.transferTo(new File(filePath));
+            //file.transferTo(new File(filePath));
 
             int score=calculateScore(content);
 
@@ -47,7 +47,7 @@ public class ResumeController {
             resume.setFileName(file.getOriginalFilename());
             resume.setContent(content);
             resume.setScore(score);
-            resume.setFilePath(filePath);
+           // resume.setFilePath(filePath);
 
             resumeRepository.save(resume);
 
