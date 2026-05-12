@@ -118,7 +118,7 @@ private int calculateScore(String content) {
     @GetMapping("/")
     public String home()
     {
-        return "index";
+        return "home";
     }
     @GetMapping("/upload")
     public String uploadPage()
