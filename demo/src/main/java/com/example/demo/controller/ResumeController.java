@@ -23,41 +23,7 @@ public class ResumeController {
 
     @Autowired
     private ResumeRepository resumeRepository;
-@ResponseBody
-    @PostMapping("/upload")
-    public String uploadResume(@RequestParam("file") MultipartFile file) {
-        try {
-           //String uploadDir="uploads/";
-            Tika tika = new Tika();
-            String content = tika.parseToString(file.getInputStream());
-           // File dir = new File(uploadDir);
-
-           // if (!dir.exists()) {
-             //   dir.mkdirs();
-            //}
-
-            //String filePath =
-                   // uploadDir + file.getOriginalFilename();
-
-            //file.transferTo(new File(filePath));
-
-            int score=calculateScore(content);
-
-            Resume resume = new Resume();
-            resume.setFileName(file.getOriginalFilename());
-            resume.setContent(content);
-            resume.setScore(score);
-           // resume.setFilePath(filePath);
-
-            resumeRepository.save(resume);
-
-            return "Upload Successful. score: " + score;
-
-        } catch (Exception e) {
-            return "Error: " + e.getMessage();
-        }
-    }
-    @GetMapping("/all")
+@GetMapping("/all")
     @ResponseBody
     public List<Resume> getAllResumes()
     {
