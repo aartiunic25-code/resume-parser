@@ -63,9 +63,17 @@
 
     <br><br>
 
-    <a href="/resume/upload">
-        <button>Upload Resume</button>
-    </a>
+    <form method="post" action="/resume/upload" enctype="multipart/form-data">
+
+        <input type="file" name="file" required>
+
+        <br><br>
+
+        <button type="submit">
+            Upload Resume
+        </button>
+
+    </form>
 
 </div>
 
