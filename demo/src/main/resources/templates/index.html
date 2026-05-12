@@ -2,7 +2,9 @@
 <html>
 <head>
     <title>Resume Parser</title>
+
     <style>
+
         body{
             font-family: Arial;
             background:#f4f4f4;
@@ -23,10 +25,6 @@
             color:#333;
         }
 
-        input{
-            margin:20px;
-        }
-
         button{
             padding:10px 20px;
             background:#007bff;
@@ -34,28 +32,41 @@
             border:none;
             border-radius:5px;
             cursor:pointer;
+            width:200px;
         }
 
         button:hover{
             background:#0056b3;
         }
+
     </style>
+
 </head>
 
 <body>
 
 <div class="container">
+
     <h1>Resume Parser</h1>
 
-    <form action="/resume/upload" method="post" enctype="multipart/form-data">
+    <br><br>
 
-        <input type="file" name="file" required>
+    <a href="/resume/login">
+        <button>Admin Login</button>
+    </a>
 
-        <br>
+    <br><br>
 
-        <button type="submit">Upload Resume</button>
+    <a href="/resume/dashboard">
+        <button>Dashboard</button>
+    </a>
 
-    </form>
+    <br><br>
+
+    <a href="/resume/upload">
+        <button>Upload Resume</button>
+    </a>
+
 </div>
 
 </body>
