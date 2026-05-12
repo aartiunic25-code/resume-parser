@@ -128,7 +128,31 @@ private int calculateScore(String content) {
     @PostMapping("/upload")
     public String uploadResume(@RequestParam("file") MultipartFile file, Model model)
     {
-        model.addAttribute("score",0);
+        try {
+
+            Tika tika = new Tika();
+
+            String content = tika.parseToString(file.getInputStream());
+
+            int score = calculateScore(content);
+
+            Resume resume = new Resume();
+
+            resume.setFileName(file.getOriginalFilename());
+            resume.setContent(content);
+            resume.setScore(score);
+
+            resumeRepository.save(resume);
+
+            model.addAttribute("score", score);
+
+            model.addAttribute("message", "Resume Uploaded Successfully!");
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+        }
+
         return "home";
     }
 
