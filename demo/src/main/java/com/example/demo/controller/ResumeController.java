@@ -154,5 +154,16 @@ private int calculateScore(String content) {
     {
         return "index";
     }
+    @GetMapping("/upload")
+    public String uploadPage()
+    {
+        return "upload";
+    }
+    @PostMapping("/upload")
+    public String uploadResume(@RequestParam("file") MultipartFile file, Model model)
+    {
+        model.addAttribute("score",0);
+        return "home";
+    }
 
 }
